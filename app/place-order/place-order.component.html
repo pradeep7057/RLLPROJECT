@@ -1,0 +1,42 @@
+
+<div class="box">
+<form #placeOrder="ngForm" (ngSubmit)="insert(placeOrder)">
+    
+    Restaurant Name : 
+    <select [(ngModel)]="restaurantid" name="restaurantid" (change)="show()">
+        <option *ngFor="let c of restaurants" value={{c.restaurantid}}>
+            {{c.restaurantname}}
+        </option>
+    </select> <br/><br/> 
+     Menu Item : 
+    <select [(ngModel)]="orders.menuid" name="menuId" #menuId="ngModel" (change)="showm()">
+        <option *ngFor="let c of menus" value={{c.menuId}}>
+            {{c.itemName}}
+        </option>
+    </select> <br/><br/> 
+    Vendor Name : 
+    <select [(ngModel)]="orders.vendorid" name="vendorId" #vendorId="ngModel" (change)="showv()">
+        <option *ngFor="let c of vendors" value={{c.vendorid}}>
+            {{c.vendorname}}
+        </option>
+    </select> <br/><br/> 
+    Wallet : 
+    <select [(ngModel)]="orders.walletId" name="walletId" #walletId="ngModel" (change)="showW()">
+        <option *ngFor="let w of wallets" value={{w.walletId}}>
+            {{w.wallettype}}
+        </option>
+    </select> <br/><br/>
+    Price : 
+    <input type="number" name="price" [(ngModel)]="price" /> <br/><br/>
+    Quantity Ordered : 
+    <input type="number" name="quantityOrdered" #quantityOrdered="ngModel"
+        [(ngModel)]="orders.quantityOrdered" /> <br/><br/>
+    
+   Comments : 
+    <input type="text" name="Comments" [(ngModel)]="orders.Comments" 
+        #Comments="ngModel" />
+        <br><br>
+    <input type="submit" value="Place Order" class="button"/>
+
+</form>
+</div>

@@ -1,0 +1,24 @@
+h3 {
+    text-shadow: 2px 2px red;
+    color: gold;
+    background-color: black;
+    display: table-cell;
+    text-align: top;
+    position: top;
+}
+table {
+    width: 70%;
+    text-align: center;
+    table-layout: auto;
+    color-scheme: calc();
+    color: aquamarine;
+}
+
+tr:nth-child(even) {
+    background:black;
+color:lightblue;
+}
+tr:nth-child(odd) {
+    background-color: white;
+    color: black;
+}

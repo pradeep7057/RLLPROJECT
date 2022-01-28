@@ -1,0 +1,14 @@
+<p>accept-or-reject works!</p>
+<div class="box">
+ Order Id : 
+ <input type="number" name="oid" [(ngModel)]="oid" /> <br/><br/>
+Vendor Id:
+<input type="number" name="vid" [(ngModel)]="vid" /> <br/><br/>
+Status : 
+<select name="status" [(ngModel)]="status">
+    <option value="YES">Yes</option>
+    <option value="NO">No</option>
+</select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br/>
+<input type="button" value="Proceed" (click)="acceptOrReject()" class="button" />
+</div>

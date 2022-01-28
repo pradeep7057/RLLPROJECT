@@ -1,0 +1,27 @@
+
+<table border="3" align="center">
+    <tr>
+        <th>Order ID</th>
+        <th>Vendor Id</th>
+        <th>Customer Id</th>
+        <th>Menu Id</th>
+        <th>Wallet</th>
+        <th>Order Date</th>
+        <th>Quantity Ordered</th>
+        <th>Order Status</th>
+        <th>Bill Amount</th>
+        <th>Comments</th>
+    </tr>
+    <tr *ngFor="let c of orders">
+        <td>{{c.orderid}} </td>
+        <td>{{c.vendorid}} </td>
+        <td>{{c.customerid}} </td>
+        <td>{{c.menuid}} </td>
+        <td>{{c.walletId}} </td>
+        <td>{{c.orderDate}} </td>
+        <td>{{c.quantityOrdered}} </td>
+        <td>{{c.orderStatus}} </td>
+        <td>{{c.billAmount}} </td>
+        <td>{{c.Comments}} </td>
+    </tr>
+</table>

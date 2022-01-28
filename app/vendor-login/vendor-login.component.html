@@ -1,0 +1,18 @@
+<div id="img" >
+    <h1>Enter Your Details</h1>
+<div class="login">
+
+<form (ngSubmit)="logMe()">
+     Vendor Name : 
+    <select [(ngModel)]="vendorid" name="vendorId" class="dropd">
+        <option *ngFor="let v of vendors" value={{v.vendorid}}>
+            {{v.vendorname}}
+        </option>
+    </select> <br/><br/> 
+    Password : 
+    <input type="password" name="passWord" [(ngModel)]="passcode" class="dropd"/> 
+    <br/><br/> 
+    <input type="submit" value="Sign In" class="button"/>
+</form>
+</div>
+</div>

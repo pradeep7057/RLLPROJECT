@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <body>
+        <div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="navbar"><a class="active" href="#"><i class="fa fa-fw fa-home"></i></a></div>
+<h1 id="headline">Vendor Dashboard</h1>
+<table table border="3"align="center" >
+<tr>
+    <th>ID</th>
+    <th>NAME</th>
+    <th>CITY</th>
+    <th>STATE</th>
+    <th>EMAIL</th>
+    <th>MOBILE</th>
+</tr>
+<tr>
+<td> {{vendor.vendorid}}</td> 
+<td>{{vendor.vendorname}}</td> 
+<td>{{vendor.vendorcity}}</td> 
+<td>{{vendor.vendorstate}}</td>
+<td>{{vendor.vendoremail}} </td>
+<td> {{vendor.vendormobile}} </td>
+</tr>
+</table>
+<br/>
+<span id="wrapper">
+    <button  aria-colindex="Show Restaurant">
+<a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showRestaurant']}}]"> Show Restaurant</a> </button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!-- <a [routerLink]="['ShowRestaurant']">Show Restaurant</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+<button  aria-colindex="Vendor Orders">
+<a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showVOrders']}}]">Vendor Orders</a> </button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button  aria-colindex="Pending Orders">
+<a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showVPOrders']}}]"> Pending Orders</a> </button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button  aria-colindex="All Vendors">
+<a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['showVendor']}}]"> Show All Vendors</a></button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button  aria-colindex="AcceptOrReject Orders">
+<a [routerLink]="['/vendDashBoard',{outlets: {'mphasis': ['acceptOrReject']}}]"> AcceptOrReject Orders</a> </button>
+<!-- <a [routerLink]="['showAllCustomers']">Show All Customers</a>  -->
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<hr/><hr/></span>
+<router-outlet name="mphasis"></router-outlet>
+</div>
+</body>
+</html>
