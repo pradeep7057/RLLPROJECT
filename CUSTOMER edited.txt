@@ -1,0 +1,253 @@
+Restaurant(RestaurantID+,RestaurantName,City,Branch,Email,ContactNo)
+Menu(MenuID+,RestaurantID-,ItemName,MenuType,Calaroies,Price) 
+Customer(CustomerID+,CustomerName,CustomerState,CustomerCity,CustomerEmail,CustomerMobile)
+Vendor(VendorId+,VendorName,VendorState,VendorCity,VendorEmail,VendorMobile) 
+Orderss(OrdersId+,VendorID-,CustomerId-,MenuId-,WalletId-,OrdersDate,QuantityOrdersed,OrdersStatus,BillAmount,Comments)
+Wallet(WalletId+,CustomerID-,WalletType,Amount)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Restaurant 
+
+create table restaurant
+(
+RestaurantID Number
+constraint pk_restaurant_RestaurantID primary key,
+RestaurantName varchar2(30),
+city varchar2(20),
+branch varchar2(20),
+Email varchar2(30),
+ContactNo Number
+);
+
+insert into restaurant(RestaurantID,RestaurantName,City,Branch,Email,ContactNo)
+values (1,'Buhari','Chennai','Chennai','buhari@gmail.com',9999988888);
+
+insert into restaurant(RestaurantID,RestaurantName,City,Branch,Email,ContactNo)
+values (2,'Faruzi','Chrompet','Chennai','faruzi@gmail.com',7777766666);
+
+insert into restaurant(RestaurantID,RestaurantName,City,Branch,Email,ContactNo)
+values (3,'Palmshore','Trichy','Trichy','palmshor@gmail.com',5555588888);
+
+insert into restaurant(RestaurantID,RestaurantName,City,Branch,Email,ContactNo)
+values (4,'Hilton','Vellore','Vellore','hilton@gmail.com',999744444);
+
+insert into restaurant(RestaurantID,RestaurantName,City,Branch,Email,ContactNo)
+values (5,'Daalchini','Tambaram','Chennai','buhari@gmail.com',9678875469);
+
+
+----------------------------------------------------------------------------------------------------------------------
+Menu(MenuID+,RestaurantID-,ItemName,MenuType,Calaroies,Price) 
+
+
+Menu
+
+create table Menu
+(
+MenuID Number
+constraint pk_menu_MenuID primary key,
+RestaurantID number
+constraint fk_menu_RestaurantID references restaurant(RestaurantID),
+ItemName varchar2(30),
+MenuType varchar2(30),
+Price number
+);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(1,1,'Vegetable Soup','Starters',50);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(2,1,'Hot and Sour Soup','Starters',60);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(3,1,'Mushroom Soup','Starters',50);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(4,1,'Chicken Soup','Starters',70);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(5,1,'Chicken 65','Side Dish',120);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(6,2,'Chilly Chicken','Side Dish',130);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(7,2,'Chicken Tikka','Side Dish',140);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(8,2,'Mutton fry','Side Dish',200);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(9,2,'Mutton Chukka','Side dish',220);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(10,2,'Mutton urundai','Side Dish',200);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(11,3,'Chicken Biriyani','Biriyani',210);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(12,3,'Mutton Biriyani','Biriyani',300);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(13,3,'Kadai Biriyani','Biriyani',250);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(14,3,'Prawn Biriyani','Biriyani',250);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(15,3,'Fish Biriyani','Biriyani',250);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(16,4,'Chicken Friedrice','Friedrice',150);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(17,4,'Mutton Friedrice','Friedrice',200);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(18,4,'Prawn Friedrice','Friedrice',200);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(19,4,'Fish Friedrice','Friedrice',250);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(20,4,'Vanilla','Icecream',50);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(21,5,'Butterscotch','Icecream',60);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(22,5,'Chocolate','Icecream',50);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(23,5,'Strawberry','Icecream',50);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(24,5,'Dark Chocolate','Icecream',50);
+
+insert into Menu(MenuID,RestaurantID,ItemName,MenuType,Price)
+values(25,5,'Pineapple','Icecream',50);
+
+_______________________________________________________________________
+Customer(CustomerID+,CustomerName,CustomerState,CustomerCity,CustomerEmail,CustomerMobile)
+
+create table Customer
+(
+CustomerID Number
+constraint pk_customer_CustomerID primary key,
+CustomerName Varchar2(30),
+CustomerState Varchar2(30),
+CustomerCity varchar2(30),
+CustomerEmail varchar2(30),
+customerMobile number
+);
+
+insert into Customer(CustomerID,CustomerName,CustomerState,CustomerCity,CustomerEmail,CustomerMobile)
+values (1,'Tejashree','Tamilnadu','Chennai','tejashree@gmail.com',9999988888);
+
+insert into Customer(CustomerID,CustomerName,CustomerState,CustomerCity,CustomerEmail,CustomerMobile)
+values (2,'Priya','Banglore','krishnagiri','priya@gmail.com',8888855555);
+
+insert into Customer(CustomerID,CustomerName,CustomerState,CustomerCity,CustomerEmail,CustomerMobile)
+values (3,'jayasri','Tamilnadu','Chennai','jayasri@gmail.com',9965412388);
+
+insert into Customer(CustomerID,CustomerName,CustomerState,CustomerCity,CustomerEmail,CustomerMobile)
+values (4,'Sumasini','Mumbai','kanpur','sumasini@gmail.com',9789654188);
+
+insert into Customer(CustomerID,CustomerName,CustomerState,CustomerCity,CustomerEmail,CustomerMobile)
+values (5,'neha','NewDelhi','Chennai','neha@gmail.com',9995762888);
+
+__________________________________________________________________________________________
+Vendor(VendorId+,VendorName,VendorState,VendorCity,VendorEmail,VendorMobile)
+
+
+create table vendor
+(
+Vendorid number
+constraint pk_vendor_Vendorid primary key,
+VendorName varchar2(30),
+VendorState Varchar2(30),
+VendorCity varchar2(30),
+VendorEmail varchar2(30),
+VendorMobile number
+); 
+
+insert into vendor(VendorId,VendorName,VendorState,VendorCity,VendorEmail,VendorMobile)
+values (1,'swiggy','TAMILNADU','MADURAI',swiggy@gamil.com',9874563210);
+
+insert into vendor(VendorId,VendorName,VendorState,VendorCity,VendorEmail,VendorMobile)
+values (2,'zomato','TAMILNADU','TRICHY','zomato@gamil.com',9874555410);
+
+insert into vendor(VendorId,VendorName,VendorState,VendorCity,VendorEmail,VendorMobile)
+values (3,'ubereats','MAHARASTHRA','DHOLAKPUR','ubereats@gamil.com',9873210);
+
+insert into vendor(VendorId,VendorName,VendorState,VendorCity,VendorEmail,VendorMobile)
+values (4,'Dunzo','LUCKNOW','LADAK','dunzo@gamil.com',9874569630);
+
+insert into vendor(VendorId,VendorName,VendorState,VendorCity,VendorEmail,VendorMobile)
+values (5,'Foodpanda','GUJARAT','JAISING','foodpanda@gamil.com',9874785210);
+
+________________________________________________________________________________
+Orderss(OrdersId+,VendorID-,CustomerId-,MenuId-,WalletId-,OrdersDate,QuantityOrdersed,OrdersStatus,BillAmount,Comments)
+
+CREATE TABLE Orders
+(
+OrderID NUMBER PRIMARY KEY,
+VENDORID NUMBER
+CONSTRAINT FK_Orders_VENDORID REFERENCES VENDOR(VENDORID),
+CUSTOMERID NUMBER
+CONSTRAINT FK_Orders_CUSTOMERID REFERENCES CUSTOMER(CUSTOMERID),
+MENUID NUMBER
+CONSTRAINT FK_Orders_MENUID REFERENCES MENU(MENUID),
+WALLETID NUMBER
+CONSTRAINT FK_Orders_WALLETID REFERENCES WALLET(WALLETID),
+OrderDATE DATE,
+QUANTITYOrdersED NUMBER,
+OrderSTATUS VARCHAR2(30),
+BILLAMOUNT NUMBER,
+COMMENTS VARCHAR2(50)
+);
+
+INSERT INTO Orders(OrderId,VendorID,CustomerId,MenuId,WalletId,OrderDate,QuantityOrdered,OrderStatus,BillAmount,Comments)
+VALUES(1,1,1,23,1,'12-NOV-2021',2,'Pending',100,'fast Delivery');
+
+INSERT INTO Orders(OrderId,VendorID,CustomerId,MenuId,WalletId,OrderDate,QuantityOrdered,OrderStatus,BillAmount,Comments)
+VALUES(2,2,2,7,2,'10-DEC-2021',2,'Pending',280,'Speed Delivery');
+
+INSERT INTO Orders(OrderId,VendorID,CustomerId,MenuId,WalletId,OrderDate,QuantityOrdered,OrderStatus,BillAmount,Comments)
+VALUES(3,3,3,8,3,'10-OCT-2021',2,'pending',400,'Fast delivery');
+
+INSERT INTO Orders(OrderId,VendorID,CustomerId,MenuId,WalletId,OrderDate,QuantityOrdered,OrderStatus,BillAmount,Comments)
+VALUES(4,4,4,18,4,'09-SEP-2021',3,'pending',600,'Extra spicy');
+
+INSERT INTO Orders(OrderId,VendorID,CustomerId,MenuId,WalletId,OrderDate,QuantityOrdered,OrderStatus,BillAmount,Comments)
+VALUES(5,5,5,19,5,'16-JUN-2021',2,'Pending',500,'No onions');
+
+
+___________________________________________________
+Wallet(WalletId+,CustomerID-,WalletType,Amount)
+
+CREATE TABLE WALLET
+(
+WALLETID NUMBER
+CONSTRAINT PK_WALLET_WALLETID PRIMARY KEY,
+CUSTOMERID NUMBER
+CONSTRAINT FK_WALLET_CUSTOMERID REFERENCES CUSTOMER(CUSTOMERID),
+WALLETTYPE VARCHAR2(30),
+AMOUNT NUMBER
+);
+
+INSERT INTO WALLET(WalletId,CustomerID,WalletType,Amount)
+VALUES (1,1,'CASH',5000);
+
+INSERT INTO WALLET(WalletId,CustomerID,WalletType,Amount)
+VALUES (2,2,'CASH',3580);
+
+INSERT INTO WALLET(WalletId,CustomerID,WalletType,Amount)
+VALUES (3,3,'UPI',4000);
+
+INSERT INTO WALLET(WalletId,CustomerID,WalletType,Amount)
+VALUES (4,4,'CARD',6000);
+
+INSERT INTO WALLET(WalletId,CustomerID,WalletType,Amount)
+VALUES (5,5,'CASH',5000);
+
+
